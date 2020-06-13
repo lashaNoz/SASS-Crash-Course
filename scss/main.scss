@@ -1,0 +1,174 @@
+// @import "test";
+
+// $color-primary: orange;
+// $color-secondary: grey;
+// $color-tertiary: royalblue;
+
+// $font-lg: 40px;
+// $font-md: 30px;
+// $font-sm: 20px;
+
+// // @mixin headingStyles($fontSize: 50px) {
+// //   font-size: $fontSize;
+// //   color: $color-secondary;
+// //   text-align: center;
+// // }
+
+// // @mixin headingTransition($par...) {
+// //   transition: $par;
+// // }
+
+// // @function fontSize($size: 25px) {
+// //   @return $size * 2;
+// // }
+
+// %heading {
+//   color: $color-primary;
+//   font-size: $font-lg;
+//   background-color: $color-secondary;
+//   text-align: center;
+// }
+
+// .nav {
+//   background-color: mix(blue, green, 10%);
+
+//   ul li {
+//     list-style: none;
+//   }
+
+//   a {
+//     text-decoration: none;
+//     font-size: $font-sm;
+//     color: $color-secondary;
+
+//     &:hover {
+//       color: $color-tertiary;
+//     }
+//   }
+// }
+
+// .banner {
+//   background-color: $color-primary;
+
+//   &-heading {
+//     // @include headingStyles($font-lg);
+//     @extend %heading;
+//   }
+
+//   &-paragraph {
+//     color: $color-tertiary;
+//     font-size: fontSize($font-sm);
+//   }
+// }
+
+// .footer h3 {
+//   //   @include headingStyles;
+//   //   @include headingTransition(color 0.5s, background-color 1s);
+
+//   //   &:hover {
+//   //     color: $color-tertiary;
+//   //     background-color: $color-primary;
+//   //   }
+//   @extend %heading;
+// }
+
+// // .footer p {
+// //   font-size: fontSize($font-md);
+// // }
+
+// // Numbers
+// .numbers {
+//   font-weight: 400;
+//   line-height: 1.5;
+//   font-size: 20px; // rem, em, %
+// }
+
+// // Strings
+// .strings {
+//   font-family: "Josefin Sans", Arial, sans-serif;
+//   font-weight: bold;
+//   font-style: italic;
+// }
+
+// // Colors
+// .colors {
+//   color: red;
+//   background-color: #ff0000;
+//   border-color: rgba(255, 0, 0, 0.5);
+//   outline-color: hsl(0, 100%, 50%);
+// }
+
+// // Lists
+// .lists {
+//   margin: 10px 15px 5px 20px;
+//   font-family: Raleway, Dosis, Lato;
+//   border: 1px solid red;
+// }
+
+// // Maps
+// $colors: (
+//   1: red,
+//   2: green,
+//   3: blue,
+// );
+
+// h1 {
+//   color: map-get($colors, 1);
+//   background-color: map-get($colors, 2);
+// }
+
+// // Booleans
+// // true, false
+
+// // null
+
+// $b: "border";
+// $c: "color";
+
+// h2 {
+//   box-sizing: #{$b}-box;
+//   #{$b}: 1px solid blue;
+//   #{$c}: red;
+//   background-#{$c}: green;
+// }
+
+// $colors: (
+//   1: red,
+//   2: green,
+//   3: blue,
+//   4: orange,
+// );
+
+// @for $i from 1 to 4 {
+//   .paragraph-#{$i} {
+//     background-color: map-get($colors, $i);
+//   }
+// }
+
+// $colors: red green blue orange;
+
+// @each $color in $colors {
+//   .paragraph-#{$color} {
+//     background-color: $color;
+//   }
+// }
+
+// h3 {
+//   @if (false) {
+//     color: red;
+//   }
+// }
+
+@mixin headingSize($size) {
+  @if ($size == large) {
+    font-size: 45px;
+  } @else if($size == medium) {
+    font-size: 30px;
+  } @else {
+    font-size: 15px;
+  }
+}
+
+h3 {
+  @include headingSize(small);
+}
